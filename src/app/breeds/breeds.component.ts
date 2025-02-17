@@ -1,5 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Inject } from "@angular/core";
 import { Breeds } from "../models/breeds/breeds";
+import { DOCUMENT } from "@angular/common";
 
 @Component({
   selector: "app-breeds",
@@ -10,7 +11,7 @@ export class BreedsComponent implements OnInit {
   breeds: Breeds[] = [];
   selectedBreed: Breeds | null = null;
 
-  constructor() {}
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit() {
     this.breeds = Breeds.getBreeds();
@@ -19,17 +20,22 @@ export class BreedsComponent implements OnInit {
   onBreedClick(breedId: number) {
     const breed = Breeds.getBreedById(breedId);
     if (breed) {
-      const container = document.querySelector(
+      const container = this.document.querySelector(
         ".containerSelectBreeds"
       ) as HTMLElement;
+      const baseElement = this.document.querySelector("base");
+      const baseHref = baseElement
+        ? baseElement.getAttribute("href") || ""
+        : "";
+
       container.style.backgroundImage = `
-  url("/assets/svgs/corner-small-left-top.svg"),
-  url("/assets/svgs/corner-small-right-top.svg"),
-  url("/assets/svgs/corner-small-left-bottom.svg"),
-  url("/assets/svgs/corner-small-right-bottom.svg"),
-    url("/assets/imgs/breeds/${breed.image}"),
-  url("/assets/imgs/breeds/bg${breed.name.toLowerCase()}.png")
-`;
+        url("${baseHref}assets/svgs/corner-small-left-top.svg"),
+        url("${baseHref}assets/svgs/corner-small-right-top.svg"),
+        url("${baseHref}assets/svgs/corner-small-left-bottom.svg"),
+        url("${baseHref}assets/svgs/corner-small-right-bottom.svg"),
+        url("${baseHref}assets/imgs/breeds/${breed.image}"),
+        url("${baseHref}assets/imgs/breeds/bg${breed.name.toLowerCase()}.png")
+      `;
       container.style.backgroundPosition =
         "top left, top right, bottom left, bottom right, center, center";
       container.style.backgroundRepeat = "no-repeat";
@@ -40,7 +46,7 @@ export class BreedsComponent implements OnInit {
   }
 
   closeInfoBreed() {
-    const container = document.querySelector(
+    const container = this.document.querySelector(
       ".containerSelectBreeds"
     ) as HTMLElement;
 

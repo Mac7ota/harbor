@@ -10,6 +10,7 @@ import { MatTooltipModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TitleComponent } from "./shared-components/title/title.component";
 import { FooterComponent } from "./shared-components/footer/footer.component";
+import { APP_BASE_HREF } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { FooterComponent } from "./shared-components/footer/footer.component";
     MatTooltipModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: "/" }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

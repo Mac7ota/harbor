@@ -5,8 +5,7 @@
 
     <div>
       <div *ngFor="let breed of breeds">
-        <img [src]="'/assets/imgs/breeds/' + breed.icon" [matTooltip]="breed.mattoltip"
-          (click)="onBreedClick(breed.id)">
+        <img [src]="'assets/imgs/breeds/' + breed.icon" [matTooltip]="breed.mattoltip" (click)="onBreedClick(breed.id)">
       </div>
     </div>
 
