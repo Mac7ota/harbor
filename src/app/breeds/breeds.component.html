@@ -1,0 +1,63 @@
+<app-title [title]="'Raças'"></app-title>
+<div class="containerBreeds bg-light" data-search-term="Raças">
+
+  <div class="containerSelectBreeds">
+
+    <div>
+      <div *ngFor="let breed of breeds">
+        <img [src]="'/assets/imgs/breeds/' + breed.icon" [matTooltip]="breed.mattoltip"
+          (click)="onBreedClick(breed.id)">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="containerInfosBreeds" *ngIf="selectedBreed">
+    <div>
+      <h3>{{selectedBreed.mattoltip}}</h3>
+      <p (click)="closeInfoBreed()">X</p>
+    </div>
+
+    <table>
+      <tr>
+        <th>Info</th>
+        <td>{{ selectedBreed.info }}</td>
+      </tr>
+      <tr>
+        <th>Região</th>
+        <td>{{ selectedBreed.region }}</td>
+      </tr>
+      <tr>
+        <th>Idade</th>
+        <td>{{ selectedBreed.age }}</td>
+      </tr>
+      <tr>
+        <th>Peso</th>
+        <td>{{ selectedBreed.weight }} kg</td>
+      </tr>
+      <tr>
+        <th>Altura</th>
+        <td>{{ selectedBreed.height }} cm</td>
+      </tr>
+      <tr>
+        <th>Vida</th>
+        <td style="background-color: #f95d5d; color: #fff;">{{ selectedBreed.life_span }}</td>
+      </tr>
+      <tr>
+        <th>Magia</th>
+        <td style="background-color: #7171ff; color: #fff;">{{ selectedBreed.energy }}</td>
+      </tr>
+      <tr>
+        <th>Habilidade: <br>Passiva: <br>Ponto: </th>
+        <td>
+          <ul>
+            <li *ngFor="let habilidade of selectedBreed.habilities">
+              <span>{{ habilidade }}</span>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

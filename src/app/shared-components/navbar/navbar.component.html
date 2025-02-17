@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <div>
+    <img src="/assets/logo-bg3-small.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <a class="navbar-brand">Harbor</a>
+  </div>
+  <div [matTooltip]="'As pesquisas so funcionam por seções exemplos: Raças, Classes e etc..'">
+    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search"
+      (keyup.enter)="onSearch($event.target.value)">
+  </div>
+</nav>
+
+<div style="height: 50px;"></div>

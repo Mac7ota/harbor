@@ -1,0 +1,17 @@
+.containerTitle {
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  background-image: url("/assets/svgs/divider-deco.svg");
+  background-position: center right;
+  background-repeat: no-repeat;
+  display: flex;
+  background-size: 300px;
+  justify-content: flex-end;
+
+  > h1 {
+    margin-right: 50px;
+    position: relative;
+    top: 5px;
+  }
+}
