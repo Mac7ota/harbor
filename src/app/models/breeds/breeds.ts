@@ -137,7 +137,7 @@ export class Breeds {
         14,
         6,
         [
-          "Sopro Dracônico - Expele um ataque elemental. (consome 6 de Magia por uso)",
+          "Sopro Dracônico - Expele um ataque elemental causa 1 - 8 de dano. (consome 6 de Magia por uso)",
           "Escamas Resistentes - Pele naturalmente protegida contra ataques. (1 - 6 de dano reduzido por ataque)",
           "Força - +2 em testes de força.",
         ]

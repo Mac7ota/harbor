@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { TitleComponent } from "./shared-components/title/title.component";
 import { FooterComponent } from "./shared-components/footer/footer.component";
 import { APP_BASE_HREF } from "@angular/common";
+import { GetInfosComponent } from './get-infos/get-infos.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { APP_BASE_HREF } from "@angular/common";
     BreedsComponent,
     TitleComponent,
     FooterComponent,
+    GetInfosComponent,
   ],
   imports: [
     BrowserModule,
