@@ -10,10 +10,10 @@ export class GetInfosComponent implements OnInit {
 
   ngOnInit() {}
 
-  downloadPDF() {
+  downloadArquiv(src: string, type: number) {
     const link = document.createElement("a");
-    link.href = "assets/pdfs/ficha.pdf";
-    link.download = "ficha.pdf";
+    link.href = src;
+    link.download = "arquivo." + (type == 1 ? "png" : "jpg");
     link.click();
   }
 }

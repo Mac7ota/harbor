@@ -1,12 +1,17 @@
-<div class="containerInfos" data-search-term="Ficha RPG">
+<app-title [title]="'Arquivos'"></app-title>
+<div class="containerInfos" data-search-term="Ficha RPG Mapa Mundi">
   <div>
-    <h2>Ficha de personagem RPG (Harbor)</h2>
+    <h2>Ficha do Personagem</h2>
     <p>Baixe sua ficha de personagem e registre todas as informações essenciais da sua aventura!
       Anote atributos, habilidades, equipamentos e muito mais para tornar sua jornada épica e organizada.</p>
 
-    <button (click)="downloadPDF()">Baixar PDF</button>
+    <button (click)="downloadArquiv('assets/imgs/ficha.png',1)">Baixar Ficha</button>
   </div>
   <div>
-    <img width="175" height="175" src="assets/imgs/pdf.png" alt="pdf" />
+    <h2>Mapa Mundi</h2>
+    <p>Baixe seu mapa mundi e explore cada canto do universo de Harbor! Marque reinos, territórios, cidades e mistérios
+      para tornar suas aventuras ainda mais imersivas e organizadas.</p>
+
+    <button (click)="downloadArquiv('assets/maps/Harbor.jpg',2)">Baixar Mapa</button>
   </div>
 </div>

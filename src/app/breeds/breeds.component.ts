@@ -33,13 +33,12 @@ export class BreedsComponent implements OnInit {
         url("${baseHref}assets/svgs/corner-small-right-top.svg"),
         url("${baseHref}assets/svgs/corner-small-left-bottom.svg"),
         url("${baseHref}assets/svgs/corner-small-right-bottom.svg"),
-        url("${baseHref}assets/imgs/breeds/${breed.image}"),
-        url("${baseHref}assets/imgs/breeds/bg${breed.name.toLowerCase()}.png")
+        url("${baseHref}assets/imgs/breeds/${breed.image}")
       `;
       container.style.backgroundPosition =
-        "top left, top right, bottom left, bottom right, center, center";
+        "top left, top right, bottom left, bottom right, center";
       container.style.backgroundRepeat = "no-repeat";
-      container.style.backgroundSize = "auto, auto, auto, auto, cover, cover";
+      container.style.backgroundSize = "auto, auto, auto, auto, cover";
     }
 
     this.selectedBreed = Breeds.getBreedById(breedId) || null;

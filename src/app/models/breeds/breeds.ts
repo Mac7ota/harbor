@@ -14,6 +14,8 @@ export class Breeds {
   nerf: string;
   energy: number;
   habilities: string[];
+  iniciat: number;
+  max: number;
 
   constructor(
     id: number,
@@ -28,7 +30,9 @@ export class Breeds {
     height: number,
     life_span: number,
     energy: number,
-    habilities: string[]
+    habilities: string[],
+    iniciat: number,
+    max: number
   ) {
     this.id = id;
     this.name = name;
@@ -43,6 +47,8 @@ export class Breeds {
     this.life_span = life_span;
     this.energy = energy;
     this.habilities = habilities;
+    this.iniciat = iniciat;
+    this.max = max;
   }
 
   static getBreeds(): Breeds[] {
@@ -53,7 +59,7 @@ export class Breeds {
         "elf.png",
         "Elfos",
         "Nascidos na mesma era dos Draconatos, os Elfos são uma raça ancestral, marcada por sua longevidade, sabedoria e conexão profunda com a magia e a natureza. Dotados de uma graça inata e sentidos aguçados, eles caminham entre as árvores como sombras e moldam a energia arcana com maestria. Se você busca uma raça ideal para classes que dominam a magia ou a arte da furtividade, os Elfos são uma escolha certeira, combinando agilidade, inteligência e um legado de mistério.",
-        "backelf.png",
+        "backelf.jpg",
         "Reino de Elvendar - Floresta de Lysandra",
         220,
         60,
@@ -64,15 +70,17 @@ export class Breeds {
           "Canalizar - Você recupera 1 - até o máximo nos pontos de Magia",
           "Olho de gato - Visão noturna",
           "Sábedoria - +4 em testes de Sabedoria",
-        ]
+        ],
+        7,
+        60
       ),
       new Breeds(
         4,
         "Human",
         "human.png",
         "Humanos",
-        "Humanos são uma raça versátil e adaptável, capazes de se adaptar a qualquer ambiente e situação. Com uma vida curta em comparação com outras raças, eles compensam sua brevidade com uma capacidade de aprendizado e evolução acelerada, tornando-se mestres em diversas áreas. Se você busca uma raça que possa se encaixar em qualquer classe ou papel, os Humanos são a escolha perfeita, com habilidades que se destacam em qualquer situação.",
-        "backhuman.png",
+        "Humanos são uma raça versátil, capazes de se adaptar a qualquer ambiente e situação. Com uma vida curta em comparação com outras raças, eles compensam sua brevidade com uma capacidade de aprendizado e evolução acelerada, tornando-se mestres em diversas áreas. Se você busca uma raça que possa se encaixar em qualquer classe ou papel, os Humanos são a escolha perfeita, com habilidades que se destacam em qualquer situação.",
+        "backhuman.jpg",
         "Reino de Arton - Cidade de Valkaria",
         80,
         90,
@@ -83,7 +91,9 @@ export class Breeds {
           "Adaptabilidade - +2 em qualquer atributo de sua escolha / Apenas na criação do personagem.",
           "Adaptabilidade Versátil - +1 em qualquer teste de habilidade.",
           "Inteligência - +2 em testes de resistência a controle mental ou manipulação por Magia.",
-        ]
+        ],
+        4,
+        80
       ),
       new Breeds(
         5,
@@ -91,7 +101,7 @@ export class Breeds {
         "githyanki.png",
         "Githyankis",
         "Guerreiros criados nos céus astrais, os Githyankis são uma raça de guerreiros, marcados por sua resistência e habilidades psíquicas. Com uma cultura marcada por guerras intermináveis e uma sociedade rígida, eles são uma raça de guerreiros, capazes de manipular objetos com a mente. Se você busca uma raça que combine força bruta e truques, os Githyankis são a escolha perfeita.",
-        "backgithyanki.png",
+        "backgithyanki.jpg",
         "Planalto Astral - Fortaleza de Tu'Narath",
         140,
         100,
@@ -102,7 +112,9 @@ export class Breeds {
           "Telecinese - Move objetos ou inimigos com a mente (consome 1 - 6 de magia por uso)",
           "Domadores - +5 em testes de montaria.",
           "Força - +2 em testes de força.",
-        ]
+        ],
+        7,
+        100
       ),
       new Breeds(
         6,
@@ -110,7 +122,7 @@ export class Breeds {
         "tiefling.png",
         "Tieflings",
         "Tieflings são descendentes de humanos e demônios, marcados por sua aparência exótica e habilidades mágicas. Com uma aparência marcante e uma aura de mistério, eles são uma raça de manipuladores e feiticeiros, capazes de lançar feitiços e manipular a energia arcana com facilidade. Se você busca uma raça que combine magia e astúcia, os Tieflings são a escolha perfeita.",
-        "backtiefling.png",
+        "backtiefling.jpg",
         "Terras de Vih Okar - Cidade de Baator",
         185,
         80,
@@ -121,7 +133,9 @@ export class Breeds {
           "Chamas Infernais - Fogo que não se apaga. 1 a 6 de dano por turno. (consome 3 de Magia por turno)",
           "Olhar Hipnótico - +2 em testes de persuasão.",
           "Destreza - +2 em testes de destreza.",
-        ]
+        ],
+        5,
+        70
       ),
       new Breeds(
         7,
@@ -129,7 +143,7 @@ export class Breeds {
         "dragonborn.png",
         "Draconatos",
         "Descendentes de dragões ancestrais, os Draconatos são uma raça à beira da extinção, vagando pelo mundo como guerreiros nômades em busca de glória e redenção. Forjados no fogo da batalha, possuem uma força descomunal e uma resistência sobre-humana, com corpos cobertos por escamas reluzentes como ouro ou tão escuras quanto a noite. Além de sua imponente presença física, herdam o poder místico de seus ancestrais dracônicos, sendo capazes de conjurar feitiços devastadores. Se você procura uma raça que una brutalidade e magia em um só ser, os Draconatos são a escolha definitiva.",
-        "backdragonborn.png",
+        "backdragonborn.jpg",
         "Antiga Cidade de Drak'Thalon",
         600,
         160,
@@ -140,7 +154,51 @@ export class Breeds {
           "Sopro Dracônico - Expele um ataque elemental causa 1 - 8 de dano. (consome 6 de Magia por uso)",
           "Escamas Resistentes - Pele naturalmente protegida contra ataques. (1 - 6 de dano reduzido por ataque)",
           "Força - +2 em testes de força.",
-        ]
+        ],
+        4,
+        110
+      ),
+      new Breeds(
+        8,
+        "dwarf",
+        "dwarf.png",
+        "Anões",
+        "Os Anões de Duroh Tar descendem de uma antiga raça que habitava as profundezas das montanhas, onde ergueram seus grandiosos salões de pedra. Exímios sobreviventes, adaptaram-se às adversidades e estabeleceram prósperas cidades subterrâneas, sustentadas por uma cultura rica e uma sociedade rigorosamente estruturada. Forjados na guerra, são guerreiros habilidosos, mas envoltos em mistério: pouco se sabe sobre suas verdadeiras origens, e menos ainda sobre a razão pela qual são incapazes de sonhar ou conjurar o Trama Arcano",
+        "backdwarf.jpg",
+        "Cordilheira de Duroh Tar - Cidade de Khazad Dum",
+        180,
+        130,
+        150,
+        16,
+        0,
+        [
+          "Frenesi de Ataque - Uma vez por combate, você pode atacar duas vezes em um turno.",
+          "Ferraria Anã - +5 em testes de forja e reparo de equipamentos.",
+          "Natureza  - +2 em testes de natureza",
+        ],
+        2,
+        180
+      ),
+      new Breeds(
+        9,
+        "halfling",
+        "halfling.png",
+        "Halflings",
+        "Criaturas peculiares, envoltas em mistério, cuja origem se perde no tempo. Acredita-se que descendam da união entre humanos e elfos, herdando a astúcia dos primeiros e a graça dos segundos. São conhecidos por sua criatividade e talento para inovações, mas preferem a reclusão, vivendo em comunidades ocultas em tocas espalhadas pelos reinos de Valkaria. Relutantes em interagir com outras espécies além de humanos e elfos, temem que tal convivência possa levar sua raça à ruína.",
+        "backhalfling.jpg",
+        "Gramado de Arton - Reino de Valkaria",
+        730,
+        50,
+        120,
+        5,
+        14,
+        [
+          "Misseis Mágicos - Ataque elemental causa 1 - 8 de dano. (consome 6 de Magia por uso)",
+          "Aprender - +2 em testes de Inteligencia",
+          "Conhecimento - +4 em testes de Sabedoria",
+        ],
+        1,
+        40
       ),
     ];
   }
