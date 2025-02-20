@@ -12,6 +12,7 @@ import { TitleComponent } from "./shared-components/title/title.component";
 import { FooterComponent } from "./shared-components/footer/footer.component";
 import { APP_BASE_HREF } from "@angular/common";
 import { GetInfosComponent } from "./get-infos/get-infos.component";
+import { ViewPinctureComponent } from './shared-components/view-pincture/view-pincture.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { GetInfosComponent } from "./get-infos/get-infos.component";
     TitleComponent,
     FooterComponent,
     GetInfosComponent,
+    ViewPinctureComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,11 @@ import { DOCUMENT } from "@angular/common";
 export class BreedsComponent implements OnInit {
   breeds: Breeds[] = [];
   selectedBreed: Breeds | null = null;
+  showModal: boolean = false;
+
+  title: string;
+  description: string;
+  pincture: string;
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
@@ -52,5 +57,19 @@ export class BreedsComponent implements OnInit {
     container.style.backgroundImage = "";
 
     this.selectedBreed = null;
+  }
+
+  openModal() {
+    const breed = Breeds.getBreedById(this.selectedBreed.id || 0);
+    if (breed) {
+      this.title = breed.nameCity;
+      this.description = breed.cityDescription;
+      this.pincture = "assets/imgs/breeds/citys/" + breed.cityImage;
+      this.showModal = true;
+    }
+  }
+
+  closeModal() {
+    this.showModal = false;
   }
 }

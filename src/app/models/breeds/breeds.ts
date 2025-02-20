@@ -16,6 +16,9 @@ export class Breeds {
   habilities: string[];
   iniciat: number;
   max: number;
+  cityImage: string;
+  nameCity: string;
+  cityDescription: string;
 
   constructor(
     id: number,
@@ -32,7 +35,10 @@ export class Breeds {
     energy: number,
     habilities: string[],
     iniciat: number,
-    max: number
+    max: number,
+    cityImage: string,
+    nameCity: string,
+    cityDescription: string
   ) {
     this.id = id;
     this.name = name;
@@ -49,6 +55,9 @@ export class Breeds {
     this.habilities = habilities;
     this.iniciat = iniciat;
     this.max = max;
+    this.cityImage = cityImage;
+    this.nameCity = nameCity;
+    this.cityDescription = cityDescription;
   }
 
   static getBreeds(): Breeds[] {
@@ -72,7 +81,10 @@ export class Breeds {
           "Sábedoria - +4 em testes de Sabedoria",
         ],
         7,
-        60
+        60,
+        "backelfcity.jpg",
+        "Cidade de Lysandra",
+        "Cidade de Lysandra é a capital do Reino de Elvendar, uma cidade mágica e repleta de vida. Construída nas copas das árvores, é um lugar de beleza e harmonia, onde Elfos e outras raças convivem em paz e prosperidade."
       ),
       new Breeds(
         4,
@@ -93,7 +105,10 @@ export class Breeds {
           "Inteligência - +2 em testes de resistência a controle mental ou manipulação por Magia.",
         ],
         4,
-        80
+        80,
+        "backhumancity.jpg",
+        "Cidade de Valkaria",
+        "Valkaria é a capital do Reino de Arton, uma cidade movimentada e repleta de oportunidades. Lar de diversas raças e culturas, é um lugar de comércio e aventuras, onde a magia e a tecnologia se misturam em harmonia."
       ),
       new Breeds(
         5,
@@ -114,7 +129,10 @@ export class Breeds {
           "Força - +2 em testes de força.",
         ],
         7,
-        100
+        100,
+        "backgithyankicity.jpg",
+        "Fortaleza de Tu'Narath",
+        "Tu'Narath é a fortaleza dos Githyankis, uma cidade-fortaleza flutuante que paira sobre o Planalto Astral. Lar de guerreiros e magos, é um lugar de treinamento e disciplina, onde os Githyankis se preparam para a guerra contra seus inimigos ancestrais."
       ),
       new Breeds(
         6,
@@ -135,7 +153,10 @@ export class Breeds {
           "Destreza - +2 em testes de destreza.",
         ],
         5,
-        70
+        70,
+        "backtieflingcity.jpg",
+        "Cidade de Baator",
+        "Baator é a cidade dos Tieflings, uma cidade mágica e repleta de segredos. Construída sobre as ruínas de uma antiga civilização, é um lugar de mistério e intriga, onde os Tieflings se reúnem para trocar segredos e conhecimentos proibidos."
       ),
       new Breeds(
         7,
@@ -156,7 +177,10 @@ export class Breeds {
           "Força - +2 em testes de força.",
         ],
         4,
-        110
+        110,
+        "backdragonborncity.jpg",
+        "Antiga Cidade de Drak'Thalon",
+        "Drak'Thalon é a cidade dos Draconatos, uma cidade-fortaleza construída nas montanhas. Lar de guerreiros e magos, é um lugar de treinamento e disciplina, onde os Draconatos se preparam para a guerra contra seus inimigos ancestrais."
       ),
       new Breeds(
         8,
@@ -177,7 +201,10 @@ export class Breeds {
           "Natureza  - +2 em testes de natureza",
         ],
         2,
-        180
+        180,
+        "backdwarfcity.jpg",
+        "Cidade de Khazad Dum",
+        "Khazad Dum é a cidade dos Anões, uma cidade-fortaleza construída nas montanhas. Lar de guerreiros e artesãos, é um lugar de trabalho e disciplina, onde os Anões se preparam para a guerra contra seus inimigos ancestrais."
       ),
       new Breeds(
         9,
@@ -198,7 +225,10 @@ export class Breeds {
           "Conhecimento - +4 em testes de Sabedoria",
         ],
         1,
-        40
+        40,
+        "backhalflingcity.jpg",
+        "Cidade de Arton",
+        "Arton é a cidade dos Halflings, uma cidade-fortaleza construída nas montanhas. Lar de guerreiros e magos, é um lugar de treinamento e disciplina, onde os Halflings se preparam para a guerra contra seus inimigos ancestrais."
       ),
     ];
   }

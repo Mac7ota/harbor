@@ -1,4 +1,6 @@
 <app-title [title]="'Raças'"></app-title>
+<app-view-pincture *ngIf="showModal" (alterModal)="closeModal()" [title]="title" [description]="description"
+  [pincture]="pincture"></app-view-pincture>
 <div class="containerBreeds bg-light" data-search-term="Raças">
 
   <div class="containerSelectBreeds">
@@ -24,7 +26,9 @@
       </tr>
       <tr>
         <th>Região</th>
-        <td>{{ selectedBreed.region }}</td>
+        <td (click)="openModal()" style="cursor: pointer;
+        text-decoration: underline;
+        color: #0000ed7d;">{{ selectedBreed.region }}</td>
       </tr>
       <tr>
         <th>Idade</th>
