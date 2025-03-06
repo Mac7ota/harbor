@@ -13,6 +13,7 @@ import { FooterComponent } from "./shared-components/footer/footer.component";
 import { APP_BASE_HREF } from "@angular/common";
 import { GetInfosComponent } from "./get-infos/get-infos.component";
 import { ViewPinctureComponent } from './shared-components/view-pincture/view-pincture.component';
+import { SectionComponent } from './shared-components/section/section.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ViewPinctureComponent } from './shared-components/view-pincture/view-pi
     FooterComponent,
     GetInfosComponent,
     ViewPinctureComponent,
+    SectionComponent,
   ],
   imports: [
     BrowserModule,
